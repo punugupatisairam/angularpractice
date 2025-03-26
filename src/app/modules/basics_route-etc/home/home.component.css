@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+li a{
+    text-decoration: none;
+}
+li{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+
+}
+.navbar{
+    background-color:lightcoral;
+    padding: 10px;
+  
+}
+.active{
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 5px;
+}

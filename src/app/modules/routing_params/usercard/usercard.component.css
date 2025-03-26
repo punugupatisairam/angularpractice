@@ -1,0 +1,28 @@
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.image{
+    text-align: center;
+}
+.card{
+    box-shadow: 1 1 1 ;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin-left: 400px;
+    margin-top: 100px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.name{
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+img{
+    width: 200px;
+    height: 200px;
+    mix-blend-mode: darken;
+    border-radius: 20px;
+}
+.parent{
+    margin-left: 50px;
+
+}
+.child{
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px grey;
+
+    
+}

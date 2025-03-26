@@ -1,0 +1,15 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+.coloring{
+    color: red;
+}
+.class1{
+    color: grey;
+    background-color: aqua;
+}
+.class2{
+    color: green;
+    background-color: bisque;
+}

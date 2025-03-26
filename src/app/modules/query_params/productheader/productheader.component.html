@@ -1,0 +1,23 @@
+<div>
+    <ul class="d-flex justify-content-around m-5 p-3 fs-5 bg-warning nav">
+    <li>
+        <a  routerLink="/products">Products </a>
+    </li>
+    <li >
+        <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'jewelery'}">Jewellary</a>
+    </li>
+    <li >
+        <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'mens clothing'}">Men's</a>
+    </li>
+    <li >
+        <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'womens clothing'}">Women's</a>
+    </li>
+    <li >
+        <a routerLink="/products" routerLinkActive="active" [queryParams]="{'category':'electronics'}">Electronics</a>
+    </li>
+    <li>
+        <button (click)="navigation()">Navigate</button>
+    </li>
+    
+    </ul>  
+</div>

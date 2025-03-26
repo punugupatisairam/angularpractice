@@ -1,0 +1,212 @@
+<app-header></app-header>
+<!--DATA BINDING-->
+
+<h1>{{name}}</h1>                           <!-- String Interpolation -->
+
+<img [src]="imageurl" alt="">  
+<br><br>                                    <!--Attribute Binding-->
+
+<button (click)="details()">add</button>
+<h3>{{events}}</h3>                         <!--Event Binding-->
+
+<input  *[(ngModel)]="newTask" placeholder="Enter Your Task">  
+<h3>Add Task :{{newTask}}</h3>                        <!--Two-Way-Data Binding-->
+
+
+<!--
+    Directives : Directives are custom HTML attributes which tell angular tpo change the structure and behaviour or styles of th DOM elements
+    1)component directives
+    2)attribute directives
+    3)structural directives  
+-->
+
+<span [ngStyle]="{'color':'red','font-size':'30px'}">Directives :-</span> <br>
+<!-- 1) Component Directives : Component directives are the most common and are essentially custom elements in Angular.-->
+        <h3> 1) Component Directive : {{title}}</h3> <br>
+
+
+
+<!--2)Attribute Directives
+    a)ngStyle
+    b)ngClass
+    c)ngModel 
+--> 
+    <h3>2)Attribute Directives :</h3>
+    <br>
+    <span [ngStyle]="{'color':'red'}">ngStyle :-</span>
+    <h1 [ngStyle]="{'color':'red','font-size':'30px','background-color':'yellow'}">ngStyle..</h1>
+    <br>
+
+    <span [ngStyle]="{'color':'red'}">ngClass :- </span>
+    <h2 [ngClass]="{'class1':condition1,'class2':condition2}">ngClass...</h2>
+    <button (click)="toggleChange()">change color</button>
+    <br><br>
+    
+    <span [ngStyle]="{'color':'red'}">ngModel :-</span> <br>
+    <input type="text" [(ngModel)]="add"> <br> 
+    <h3>Add : {{add}}</h3>
+<!--structural directives
+    a)ngIf
+    b)ngFor
+    c)ngSwitch
+-->
+    <h3> 3) structural directives :</h3>
+    <span [ngStyle]="{'color':'red'}">ngIf :-</span> <br><br>
+
+    <!-- <span *ngIf="!data ; else sample"> 
+        hi
+    </span>
+
+    <br> -->
+    <span *ngIf="!data; then simple else sample"></span>
+
+  
+    <ng-template #sample>
+        {{data}}
+    </ng-template>
+
+    <ng-template #simple>
+        it is loaded with then block
+    </ng-template>
+    <br><br>
+    <span [ngStyle]="{'color':'red'}">ngFor :-</span> <br><br>
+
+    <table border="1">
+        <tr>
+            <td>Index</td>
+            <td>Content</td>
+            <td>First</td>
+            <td>last</td>
+            <td>Even</td>
+            <td>Odd</td>
+        </tr>
+        <tr *ngFor="let n of num; index as i; first as f; last as l;even as e; odd as o;">
+            <td>{{i+1}}</td>
+            <td> {{n}}</td>
+            <td>{{f}}</td>
+            <td>{{l}}</td>
+            <td>{{e}}</td>
+            <td>{{o}}</td>
+            
+        </tr>
+    </table>
+    <br><br>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Description </td>
+        </tr>
+        <tr *ngFor="let b of BibleBooks ">
+            <td>{{b.id}}</td>
+            <td>{{b.name}}</td>
+            <td>{{b.description}}</td>
+
+        </tr>
+    </table>
+    <br><br>
+    <span [ngStyle]="{'color':'red'}">ngSwitch:-</span> <br><br>
+
+    Add Calculation : <input type="text" [(ngModel)]="op">
+    <div [ngSwitch]="op">
+        <div *ngSwitchCase="'+'">{{num1}}+{{num2}}={{num1+num2}} </div>
+        <div *ngSwitchCase="'-'">{{num1}}-{{num2}}={{num1-num2}} </div>
+        <div *ngSwitchCase="'*'"> {{num1}}*{{num2}}={{num1*num2}} </div>
+        <div *ngSwitchCase="'/'">{{num1}}/{{num2}}={{num1/num2}} </div>
+        <div *ngSwitchDefault="">Enter Valid value</div>
+    </div>
+    <br>
+
+    write season :<input type="text" [(ngModel)]="seasons">
+    <div [ngSwitch]="seasons">
+        <div *ngSwitchCase="'summer'">{{summer}}</div>
+        <div *ngSwitchCase="'rainy'">{{rainy}}</div>
+        <div *ngSwitchCase="'winter'">{{winter}}</div>
+
+    </div>
+
+    write month : <input type="text" [(ngModel)]="months" >
+    <div [ngSwitch]="months">
+        <div *ngSwitchCase="'march'">{{march}}</div>
+        <div *ngSwitchCase="'april'">{{march}}</div>
+        <div *ngSwitchCase="'may'">{{march}}</div>
+        <div *ngSwitchCase="'june'">{{june}}</div>
+        <div *ngSwitchCase="'july'">{{june}}</div>
+        <div *ngSwitchCase="'agust'">{{june}}</div>
+        <div *ngSwitchDefault="">Enter Valid input</div>
+
+    </div>
+    <br><br>
+    <span [ngStyle]="{'color':'red'}">Angular Pipes:-</span> <br>
+
+    <h2>Currecny : {{money | currency : "INR" }}</h2>
+    <h2>Uppercase : {{title | uppercase}}</h2>
+    <h2>Lowercase : {{myname | lowercase}}</h2>
+    <h2>Titlecase : {{myname | titlecase}}</h2> 
+    <h2>JSON : {{person | json}}</h2>
+    <h2>Date : {{dob | date : 'dd/MM/yy'}}</h2>
+    <h2>Percent : {{money | percent}}</h2>
+    <h2>Slice : {{names |slice :0:7 }}</h2>
+
+    <h1>{{person2 | custompipe :wish }}</h1>
+
+    <span [ngStyle]="{'color':'red'}">API call using async</span>
+
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+        <tr *ngFor="let user of users | async">
+            <th >{{user.id}}</th>
+            <td>{{user.name }}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </table>
+
+
+    <br>
+    <span [ngStyle]="{'color':'red'}">Component Communtion :- </span>
+
+    <p [ngStyle]="{'color':'red'}">  1) Input Decorator parent to child :</p>
+
+    <div>
+        <app-header [headertop]="headerdata" [headersub]="subdata"> </app-header>
+    </div>
+  
+    <p [ngStyle]="{'color':'red'}" > 2.a) Output Decorator child to parent </p>
+    <div>
+        <app-header (comm)="childdata=$event"> </app-header>
+        <span>{{childdata}}</span>
+    </div>
+    
+
+    <p [ngStyle]="{'color':'red'}" > b) template reference varibale </p>
+
+    <div>
+        <app-header #child ></app-header>
+        
+    </div>
+    <b> parent :</b><span>{{child.tempref}}</span> <br> 
+    <span>{{child.vachindhi()}}</span> 
+
+
+    <p [ngStyle]="{'color':'red'}" > c) viewchild decorator</p>
+
+  
+
+    <p [ngStyle]="{'color':'red'}">DOM Manipulation</p>
+
+    <!-- <input type="text" #test >  -->
+    <p #test>its view child </p> 
+
+    <button (click)="getdata()"> Click </button> 
+    
+    <p #tests>It is DOM Manipulation </p> 
+    <span #tests>it is for viewchildren Accessing</span> <br> 
+    <button (click)="children()">Get All</button> 
+
+   
+    
+

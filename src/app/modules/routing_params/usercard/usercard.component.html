@@ -1,0 +1,39 @@
+<!-- <div *ngFor="let u of usersdata">
+    <span>{{u.name}}</span>
+    
+</div> -->
+
+
+ <!-- <div *ngIf="usersdata">
+    <span>{{ usersdata.name }}</span>
+  </div> -->
+
+<div *ngIf="usersdata"  >
+    <div class="card">
+    <div *ngFor="let u of [usersdata]">
+      <div class="image">
+        <img src="{{u.img}}" alt="angular"> 
+
+      </div>
+      <div class="name">
+        <h1 >{{ u.name }}</h1>
+      </div> <br> <br>
+      <div class="details">
+        <span>Email : </span>
+        <span>{{u.email}}</span>
+      </div> <br>
+      <div class="details">
+        <span>city : </span>
+        <span>{{u.address.city}}</span>
+      </div><br>
+      <div class="details">
+        <span>Mobile : </span>
+        <span>{{u.phone}}</span>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  
+ 
+  

@@ -1,0 +1,15 @@
+<app-header> </app-header>
+<div class="usersnames">
+    <div *ngFor="let u of usersdata" class="userscard">
+        <!-- <img src="{{u.img}}" alt="angular"> --> 
+        <h3>{{u.name}}</h3> 
+         
+         <div>
+            
+            <a [routerLink]="['/usercard',u.id]" routerLinkActive="active">profile</a>
+
+         </div>
+        <!-- <p>I am Software  developer i will become CEO of my own company </p> -->
+    </div> 
+</div>
+

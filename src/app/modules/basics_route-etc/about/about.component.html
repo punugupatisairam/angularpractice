@@ -1,0 +1,27 @@
+<app-header></app-header>   <br>
+<!-- <div class="usersnames" >
+   <div class="userscard" *ngFor="let b of usersdata">
+        <img src="{{b.img}}" alt="angular"> -->
+        <!-- <p>Iam angular developer , i can develop responsive websites for clients</p> -->
+        <!-- <h3 class="name">{{b.name}}</h3>
+        <div class="profile">
+            <a routerLink="/home" routerLinkActive="active">profile</a>
+
+        </div>
+   </div>
+</div>  -->
+<h1>
+    <a routerLink="/about/head" routerLinkActive="active">head child</a> &nbsp;&nbsp;
+    <a routerLink="/about/child1" routerLinkActive="active">child1</a>
+    <router-outlet></router-outlet>
+
+</h1>
+<div>
+    <div  *ngFor="let p of productsdata">
+        <span>{{p.id}}</span>  &nbsp;
+        <span>{{p.title}}</span> &nbsp;
+        <span>{{p.price}}</span>
+
+    </div>
+    <button (click)="getdata()">products</button>
+</div>
